@@ -1,5 +1,6 @@
 use serde::Deserialize;
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 pub(crate) struct DiscordUser {
     pub id: String,
@@ -22,6 +23,7 @@ pub(crate) struct DiscordUser {
     pub money_wastes: Vec<DiscordPayment>,
 }
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 pub(crate) struct DiscordConnection {
     #[serde(rename = "type")]
@@ -37,6 +39,7 @@ pub(crate) struct DiscordConnection {
     pub revoked: bool,
 }
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 pub(crate) struct DiscordPayment {
     pub id: String,
@@ -55,6 +58,7 @@ pub(crate) struct DiscordPayment {
     pub sku_subscription_plan_id: Option<String>,
 }
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 pub(crate) struct DiscordSubscription {
     pub id: String,
@@ -63,11 +67,13 @@ pub(crate) struct DiscordSubscription {
     // TODO
 }
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 pub(crate) struct DiscordMessages {
     pub messages: Vec<DiscordMessage>,
 }
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 pub(crate) struct DiscordMessage {
     #[serde(rename = "ID")]
