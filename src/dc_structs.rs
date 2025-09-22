@@ -11,7 +11,7 @@ pub(crate) struct DiscordUser {
     pub has_mobile: bool,
     pub needs_email_verification: bool,
     pub premium_until: Option<String>,
-    pub flags: u64,
+    //pub flags: u64,
     pub phone: Option<String>,
     pub temp_banned_until: Option<String>,
     pub ip: Option<String>,
@@ -48,7 +48,7 @@ pub(crate) struct DiscordPayment {
     pub amount_refunded: u32,
     pub status: u8,
     pub description: String, // usually "Nitro", "Nitro Basic Monthly" etc
-    pub flags: u32,
+    //pub flags: u32,
     pub subscription: Option<DiscordSubscription>,
     pub sku_id: Option<String>,
     pub sku_price: Option<u32>,
@@ -61,4 +61,19 @@ pub(crate) struct DiscordSubscription {
     #[serde(rename = "type")]
     pub type_: u8,
     // TODO
+}
+
+#[derive(Deserialize, Debug)]
+pub(crate) struct DiscordMessages {
+    pub messages: Vec<DiscordMessage>,
+}
+
+#[derive(Deserialize, Debug)]
+pub(crate) struct DiscordMessage {
+    #[serde(rename = "ID")]
+    pub id: u64,
+    #[serde(rename = "Timestamp")]
+    pub timestamp: String,
+    #[serde(rename = "Contents")]
+    pub content: String,
 }
